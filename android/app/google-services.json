@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "478530982602",
+    "project_id": "foodlogin-5015f",
+    "storage_bucket": "foodlogin-5015f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478530982602:android:dc58decf3e4fdf6eceda33",
+        "android_client_info": {
+          "package_name": "com.miam.foodlogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478530982602-0ft49ks94a5odtf59lldcs2lmiiq53hf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmf4Yxh604_sm0KISYFmLBsb5RuVVuBS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478530982602-0ft49ks94a5odtf59lldcs2lmiiq53hf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
