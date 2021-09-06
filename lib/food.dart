@@ -470,6 +470,7 @@ class _FoodState extends State<Food> {
                             ),
                             Container(
                               height: 150,
+                              width: 420,
                               child: StreamBuilder(
                                   stream: firestore
                                       .collection("resturant")
@@ -483,43 +484,39 @@ class _FoodState extends State<Food> {
                                             (BuildContext context, index) {
                                           // print(a);
                                           if (index < 10) {
-                                            return Column(
+                                            return Row(
                                               children: [
-                                                Expanded(
-                                                  child: Card(
-                                                    color: Colors.orange[50],
-                                                    child:
-                                                        SingleChildScrollView(
-                                                      padding: EdgeInsets.only(
-                                                          top: 7),
-                                                      child: Column(
-                                                        children: [
-                                                          Container(
-                                                            height: 90,
-                                                            width: 70,
-                                                            margin: EdgeInsets
-                                                                .symmetric(
-                                                              horizontal: 10,
-                                                            ),
-                                                            child:
-                                                                Image.network(
-                                                              a[index]['rimg'],
-                                                              fit: BoxFit.cover,
-                                                            ),
+                                                Card(
+                                                  color: Colors.orange[50],
+                                                  child: SingleChildScrollView(
+                                                    scrollDirection:
+                                                        Axis.horizontal,
+                                                    padding:
+                                                        EdgeInsets.only(top: 7),
+                                                    child: Column(
+                                                      children: [
+                                                        Container(
+                                                          height: 90,
+                                                          width: 70,
+                                                          margin: EdgeInsets
+                                                              .symmetric(
+                                                            horizontal: 10,
                                                           ),
-                                                          SizedBox(
-                                                            height: 10,
+                                                          child: Image.network(
+                                                            a[index]['image'],
+                                                            fit: BoxFit.cover,
                                                           ),
-                                                          Text(
-                                                              a[index]['rname'],
-                                                              style: TextStyle(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  fontSize:
-                                                                      17)),
-                                                        ],
-                                                      ),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 10,
+                                                        ),
+                                                        Text(a[index]['name'],
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                fontSize: 17)),
+                                                      ],
                                                     ),
                                                   ),
                                                 ),

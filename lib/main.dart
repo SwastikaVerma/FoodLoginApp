@@ -33,26 +33,12 @@ class FudLog extends StatelessWidget {
   }
 }
 
-/*class AuthTypeSelector extends StatelessWidget {
-  // Navigates to a new page
-  void food(BuildContext context, Widget page) {
-    Navigator.of(context) /*!*/ .push(
-      MaterialPageRoute<void>(builder: (_) => page),
-    );
-  }*/
-
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
 }
-/*@override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: LoginPage(),
-    );
-  }*/
 
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController uname = TextEditingController();
@@ -241,19 +227,6 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               SizedBox(height: 5),
                               TextButton(
-                                /*onPressed: (){
-                                            print("login");
-                                            Navigator.push(
-                                                   context,
-                                                   MaterialPageRoute(
-                                                     builder: (BuildContext context) => Food(
-                                                       //vari: uname.text,
-                                                       //varr: pwd.text,
-                                                     ),
-                                                     ),
-                                             );
-                                              },*/
-
                                 onPressed: () async {
                                   if (uname.text.length < 6) {
                                     setState(() {

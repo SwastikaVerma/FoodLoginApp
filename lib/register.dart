@@ -4,11 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:foodlogin/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, pwd}) : super(key: key);
-  
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -20,7 +18,7 @@ class _HomePageState extends State<HomePage> {
 
   bool _success = false;
   String _userEmail = '';
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -90,10 +88,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                       TextFormField(
                         validator: (String? val) {
-                                    return (val != null && val != '@')
-                                        ? 'Enter a valid email'
-                                        : null;
-                                  },
+                          return (val != null && val != '@')
+                              ? 'Enter a valid email'
+                              : null;
+                        },
                         style: TextStyle(color: Colors.orange[900]),
                         controller: uname,
                         decoration: InputDecoration(
@@ -164,11 +162,12 @@ class _HomePageState extends State<HomePage> {
                       TextButton(
                         onPressed: () async {
                           await homePage();
-                          Navigator.push(context, 
-                           MaterialPageRoute<void>(
-                            builder: (BuildContext context) => FudLog(),
-                             ),
-                           );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) => FudLog(),
+                            ),
+                          );
                         },
                         child: Text('REGISTER'),
                         style: TextButton.styleFrom(
@@ -212,7 +211,7 @@ class _HomePageState extends State<HomePage> {
         password: pwd.text,
       ))
           .user;
-       FirebaseFirestore.instance.collection('register').doc(user!.email).set({
+      FirebaseFirestore.instance.collection('register').doc(user!.email).set({
         //'id': user.uid,
         'name': name.text,
         'email': user.email,
@@ -229,16 +228,15 @@ class _HomePageState extends State<HomePage> {
       if (e.code == 'weak-password') {
         print("Password is too weak");
         ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Weak password'),
-        ),
-      );
+          const SnackBar(
+            content: Text('Weak password'),
+          ),
+        );
       } else if (e.code == 'email-already-in-use') {
         print('This account already exist');
       }
     } catch (e) {
       print(e);
-      
     }
   }
 }
